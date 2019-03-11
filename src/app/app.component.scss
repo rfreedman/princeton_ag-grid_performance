@@ -1,0 +1,78 @@
+$header-color: rgb(176, 196, 222);
+$header-text-color: rgb(0,0,0);
+
+$footer-color: rgb(176, 196, 222);
+$footer-text-color: rgb(0,0,0);
+
+$header-height: 50px;
+$spacer-margin: 10px;
+
+$stats-height: 10em;
+
+$footer-height: 2em;
+
+.content {
+  width: calc(100vw - #{$spacer-margin * 2});
+  height: calc(100vh - #{$spacer-margin * 2});
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header {
+  height: $header-height;
+  width: 100%;
+  color: $header-text-color;
+  background-color: $header-color;
+  margin-bottom: $spacer-margin;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.grid-holder {
+  height: calc(100vh - #{$header-height} - #{$spacer-margin * 2} - #{$stats-height} - #{$footer-height});
+  width: 100%;
+
+  #grid {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.stats {
+  height: $stats-height;
+  width: 100%;
+  padding-left: 1em;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+
+  .row {
+    display:flex;
+    flex-direction: row;
+    margin-top: $spacer-margin;
+
+    .messages {
+      height: 8em;
+      margin-left: 2em;
+    }
+  }
+}
+
+#maxRows {
+  width: 4em;
+  margin-right: 2em;
+}
+
+.footer {
+  height: $footer-height;
+  background-color: $footer-color;
+  color: $footer-text-color;
+  margin-top: $spacer-margin;
+  padding-left: 1em;
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+}

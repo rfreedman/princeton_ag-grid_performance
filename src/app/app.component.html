@@ -1,0 +1,56 @@
+<div class="content">
+
+
+  <div class="header">AG-Grid Performance Test</div>
+
+  <div class="grid-holder">
+    <ag-grid-angular
+      id="grid"
+      class="ag-theme-balham"
+
+      (gridReady)="gridHelper.onGridReady($event)"
+      (rowDataChanged)="gridHelper.onRowDataChanged($event)"
+      [getRowNodeId]="gridHelper.getRowNodeId"
+
+      [groupIncludeFooter]="true"
+      [groupIncludeTotalFooter]="true"
+      [groupDefaultExpanded]="-1"
+
+      [suppressAggAtRootLevel]="true"
+      [suppressAggFuncInHeader]="true"
+
+
+      [singleClickEdit]="true"
+      [suppressCellSelection]="true"
+      [stopEditingWhenGridLosesFocus]="true"
+      [rowSelection]="'single'"
+
+
+      [animateRows]="false"
+      [deltaRowDataMode]="false"
+      [ensureDomOrder]="true"
+      [suppressColumnVirtualisation]="true"
+      [rowBuffer]="99999"
+    >
+    </ag-grid-angular>
+  </div>
+
+  <div class="stats">
+    <div class="row">
+      <div class="messages">
+        <div *ngFor="let message of messages">{{message}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <label for="maxRows">Max Rows: <input type="number" id="maxRows" min="1" max="1000" [(ngModel)]="maxRows"></label>
+      <button class="get-data" (click)="getData()">Get Data</button>
+      <button class="clear-data" (click)="clearData()">Clear Data</button>
+      <button class="clear-get-data" (click)="clearAndGetData()">Clear and Get Data</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Princeton University Office of Information Technology</span>
+  </div>
+
+</div>
