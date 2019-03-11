@@ -41,6 +41,7 @@ We found that:
   to clear the grid, about 1.7 - 1.8 seconds to populate it).
 
 So,
+
  - While we can live with needing to always set 0 rows to clear the grid first before populating it again, this seems like it should not be necessary, and 
  that invoking  ```setRowData()``` when the grid has rows should be as fast as invoking it with zero first, and then invoking it again with data.
  
